@@ -1,7 +1,7 @@
 <launch>
 
   <!-- Config camera image topic  -->
-  <arg name="camera_rgb_topic" default="/camera/rgb/image_raw" />
+  <arg name="camera_rgb_topic" default="/d435i/color/image_raw" />
 
   <!-- Console launch prefix -->
   <arg name="launch_prefix" default=""/>
@@ -12,12 +12,12 @@
 
   <!-- ROS and network parameter files -->
   <arg name="ros_param_file"             default="$(find darknet_ros)/config/ros.yaml"/>
-  <arg name="network_param_file"         default="$(find darknet_ros)/config/yolov2-tiny.yaml"/>
+  <arg name="network_param_file"         default="$(find darknet_ros)/config/yolov2.yaml"/>
 
   <!-- Load parameters -->
   <rosparam command="load" ns="darknet_ros" file="$(arg network_param_file)"/>
   <rosparam command="load" file="$(find darknet_ros)/config/ros.yaml"/>
-  <param name="darknet_ros/subscribers/camera_reading/topic" type="string" value="$(arg camera_rgb_topic)" />
+  <param name="/darknet_ros/subscribers/camera_reading/topic" type="string" value="$(arg camera_rgb_topic)" />
 
   <!-- Start darknet and ros wrapper -->
   <node pkg="darknet_ros" type="darknet_ros" name="darknet_ros" output="screen" launch-prefix="$(arg launch_prefix)">

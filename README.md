@@ -65,7 +65,7 @@ Now, you can run *darknet_ros_3d* typing ``roslaunch darknet_ros_3d darknet_ros_
 
 * **darknet_ros_topic:** topic where darknet ros publicates his bounding boxes. ``/darknet_ros/bounding_boxes``
 
-* **point_cloud_topic:** topic where point cloud is published from camera. By default: ``/camera/depth_registered/points``. **It is important that point cloud topic be of PointCloud2 type and it be depth_registered**
+* **point_cloud_topic:** topic where point cloud is published from camera. By default: ``/d435i/depth_registered/points``. **It is important that point cloud topic be of PointCloud2 type and it be depth_registered**
 
 * **working_frame:** frame that all measurements are based on. By default, *camera_link*.
 
